@@ -1,14 +1,14 @@
-const dbConfigurations = require('../Config/dbConfig')
 const { Sequelize, DataTypes } = require('sequelize')
+require('dotenv').config()
 
 //making connection with database
 const sequelize = new Sequelize(
-    dbConfigurations.DB,
-    dbConfigurations.USER,
-    dbConfigurations.PASSWORD,
+    process.env.DB,
+    process.env.USER,
+    process.env.PASSWORD,
     {
-        host: dbConfigurations.HOST,
-        dialect: dbConfigurations.dialect
+        host: process.env.HOST,
+        dialect: process.env.dialect
     },
 )
 
